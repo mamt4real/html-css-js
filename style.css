@@ -93,8 +93,15 @@ main {
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(to bottom, #0073e6, #004d99);
+  /* Allow Jekill Preprocess the url before deploy on github pages
+   * replace with the next commented line on local
+  */
   background-image: url({{'images/hero-bg.png'|absolute_url}});
+  /* background-image: url('images/hero-bg.png'); */
+}
+
+.hero {
+  background: linear-gradient(to bottom, #0073e6, #004d99);
   background-size: cover;
   color: white;
   text-align: center;
@@ -341,6 +348,9 @@ footer h4 {
 footer ul {
   list-style: none;
   margin-left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 footer ul li {
@@ -416,6 +426,13 @@ footer address {
   footer {
     flex-direction: column;
     gap: 1rem;
+  }
+
+  footer section {
+    align-items: center;
+  }
+  footer ul {
+    align-items: center;
   }
 
   .footer__links {
