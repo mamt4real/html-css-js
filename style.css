@@ -94,7 +94,7 @@ main {
 /* Hero Section */
 .hero {
   background: linear-gradient(to bottom, #0073e6, #004d99);
-  background-image: url(/images/hero-bg.png);
+  background-image: url({{'images/hero-bg.png'|absolute_url}});
   background-size: cover;
   color: white;
   text-align: center;
