@@ -93,15 +93,8 @@ main {
 
 /* Hero Section */
 .hero {
-  /* Allow Jekill Preprocess the url before deploy on github pages
-   * replace with the next commented line on local
-  */
-  background-image: url({{'images/hero-bg.png'|absolute_url}});
-  /* background-image: url('images/hero-bg.png'); */
-}
-
-.hero {
   background: linear-gradient(to bottom, #0073e6, #004d99);
+  background-image: url('images/hero-bg.png');
   background-size: cover;
   color: white;
   text-align: center;
@@ -260,6 +253,7 @@ main {
 section#signin {
   justify-content: flex-start;
   background-color: #efefef;
+  min-height: fit-content;
 }
 section#signin form {
   display: flex;
@@ -300,6 +294,14 @@ section#signin form > div.flex {
   text-align: center;
   background-color: #d4a373;
   border: none;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.form-control button.btn:hover {
+  background: white;
+  color: #d4a373;
+  border: solid 1px #d4a373;
 }
 
 input,
@@ -383,10 +385,30 @@ footer address {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .header {
+    padding: 12px 24px;
+  }
+  .logo a {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 15.68px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+  }
   .nav-links ul {
     /* flex-direction: column; */
     align-items: flex-end;
     gap: 1rem;
+  }
+
+  .nav-links li a {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16.34px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
   }
 
   section > h2 {
@@ -395,8 +417,16 @@ footer address {
     line-height: 24.38px;
   }
 
+  .hero {
+    padding: 1rem;
+  }
+
   .hero h1 {
-    font-size: 2rem;
+    font-size: 23px;
+  }
+
+  .hero__text {
+    font-size: 13px;
   }
 
   #articles > p {
@@ -410,13 +440,17 @@ footer address {
     grid-template-columns: 1fr;
   }
   .articles__nav {
-    gap: 12px;
+    gap: 10px;
+    flex-wrap: wrap;
   }
 
   .articles__nav li {
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 700;
-    line-height: 25px;
+    line-height: 20px;
+  }
+  .articleCard {
+    width: 90%;
   }
 
   #signin form {
@@ -441,7 +475,10 @@ footer address {
   }
 
   .footer__bottom {
-    padding: 20px 40px;
+    padding: 12px 24px;
+    font-size: 12px;
+    flex-direction: column-reverse;
+    align-items: center;
   }
 }
 
